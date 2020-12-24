@@ -1,0 +1,186 @@
+/*
+    Template Name: Pegeon - Business & Consulting html landing page
+    Author: webthemes
+    Author Uri: https://www.templatemonster.com/authors/webthemes/
+    Version: 1.0
+*/
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+	.container{
+		max-width: 1200px;
+	}
+}
+
+@media(max-width: 1199px){
+	#menu li a{
+		font-size: 15px;
+	}
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (max-width: 991px) {
+	.hamburger-menu{
+		display: block;
+	}
+
+	#menu{
+		position: fixed;
+		z-index: -1;
+		top: 70px;
+		left: -100%;
+		width: 100%;
+		height: calc(100% - 70px);
+		background-color: #030921;
+		transition: 0.5s;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		overflow: auto;
+	}
+
+	#menu.current{
+		left: 0;
+	}
+	
+	.menu_wrapper{
+		background: #030921;
+	    width: 100%;
+	    height: 100%;
+	    position: fixed;
+	    left: -100%;
+	    top: 0;
+	    z-index: -1;
+	    transition: 0.5s;
+	}
+
+	.menu_wrapper.current{
+		left: 0;
+	}
+
+	#menu li{
+		display: block;
+		text-align: center;
+		margin-top: 10px;
+	}
+
+	#menu li:last-child{
+		padding-right: 15px;
+	}
+
+	#menu li a{
+		display: inline-block;
+	}
+
+	.title_2{
+		max-width: 100%;
+	}
+
+	.grow_wrapper{
+		text-align: center;
+	}
+
+	.grow_wrapper .technics li{
+		display: inline-block;
+		text-align: left;
+	}
+
+	.mt_md_30{
+		margin-top: 30px;
+	}
+
+	.testi_carousel .item .single_client{
+		padding: 30px;
+	}
+}
+
+/*Medium devices (tablets, 767px and down)*/
+@media (max-width: 767px) {
+	.section_padd{
+		padding: 60px 0 70px;
+	}
+	.landing_wrapper .heading {
+	    font-size: 45px;
+	    line-height: 55px;
+	}
+
+	.landing_wrapper .heading br{
+		display: none;
+	}
+
+	.landing_wrapper .sub_heading {
+	    font-size: 17px;
+	    line-height: 27px;
+	}
+
+	.hero_slider .owl-nav{
+		display: none;
+	}
+
+	.banner_wrapper{
+		text-align: center;
+	}
+
+	.banner_button_wrapper{
+		text-align: center;
+		margin-top: 30px;
+	}
+
+	.project_filter_menu ul li {
+		font-size: 16px;
+	}
+
+	.expert_content {
+	    padding: 25px 0 25px;
+	}
+
+	.single_expert:hover .expert_details {
+	    bottom: -28px;
+	}
+
+	footer{
+		text-align: center;
+	}
+
+}
+
+/*Small devices (landscape phones, 575px and down)*/
+@media (max-width: 575px) {
+
+	body{
+		font-size: 16px;
+	}
+
+	.landing_wrapper .home_btn_wrapper .button:first-child{
+		margin-left: 0;
+	}
+
+	.landing_wrapper .home_btn_wrapper .button:last-child{
+		margin-right: 0;
+	}
+
+	.title_1,
+	.landing_wrapper .heading{
+		font-size: 30px;
+		line-height: 40px;
+	}
+
+	.button{
+		height: 50px;
+		line-height: 50px;
+	}
+
+	.accordion .button .fa-check{
+		top: 11px;
+	}
+
+	.project_filter_menu ul li{
+		padding: 0;
+		margin-bottom: 10px;
+	}
+}
+
+@media (max-width: 460px) {
+	.landing_wrapper .home_btn_wrapper .button{
+		width: 44%;
+	}
+}
