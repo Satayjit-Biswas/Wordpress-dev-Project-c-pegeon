@@ -17,15 +17,6 @@
         <!-- <link href="img/favicon.png" type="image/png" rel="icon"> -->
 
         <!-- all css here -->
-        <link href="<?php echo get_template_directory_uri();?>/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="<?php echo get_template_directory_uri();?>/css/fontawesome.min.css" rel="stylesheet" type="text/css" />
-        <link href="<?php echo get_template_directory_uri();?>/css/owl.carousel.min.css" rel="stylesheet" type="text/css" />
-        <link href="<?php echo get_template_directory_uri();?>/css/magnific-popup.css" rel="stylesheet" type="text/css" />
-        <link href="<?php echo get_template_directory_uri();?>/css/aos.css" rel="stylesheet" type="text/css" />
-        <link href="<?php echo get_template_directory_uri();?>/css/helper.css" rel="stylesheet" type="text/css" />
-        <link href="<?php echo get_template_directory_uri();?>/css/style.css" rel="stylesheet" type="text/css" />
-        <link href="<?php echo get_stylesheet_uri();?>" rel="stylesheet" type="text/css" />
-        <link href="<?php echo get_template_directory_uri();?>/css/responsive.css" rel="stylesheet" type="text/css" />
         <?php wp_head();?>
     </head>
     <body data-spy="scroll" data-target="#menu" data-offset="75">
@@ -227,7 +218,7 @@
             <!-- end service wrapper -->
 
             <!-- start banner wrapper -->
-            <div class="banner_wrapper jarallax" style="background-image: url('img/banner.jpg');">
+            <div class="banner_wrapper jarallax" style="background-image: url('<?php echo get_template_directory_uri();?>/img/banner.jpg');">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-md-8">
@@ -889,11 +880,9 @@
         <!-- end back to top -->
 
         <!-- all js here -->
-        <script src="<?php echo get_template_directory_uri();?>/js/jquery-3.3.1.min.js"></script>
-        <script src="<?php echo get_template_directory_uri();?>/js/plugins.js"></script>
-        <script src="<?php echo get_template_directory_uri();?>/js/main.js"></script>
+        <?php wp_footer();?>
     </body>
-    <?php wp_footer();?>
+    
 
 <!-- Mirrored from sagormia.xyz/html/Pegeon/index-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 08 Nov 2020 17:30:27 GMT -->
 </html>
