@@ -18,6 +18,37 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="landing_wrapper d-flex align-items-center" style="background-image: url('<?php echo get_template_directory_uri();?>/img/home_2.jpg')">
+                        <div class="container w-100">
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-12 text-center">
+                                    <h1 class="heading text-white">Digital Marketing For <br> Startup Business</h1>
+                                    <p class="sub_heading mx-auto mt_20 text-white">Design is a way of life, a point of view. It involves the whole complex of visual communications: talent, creative ability manual.</p>
+                                    <div class="home_btn_wrapper mt_25">
+                                        <a href="#" class="blue_bg button">Get Started</a>
+                                        <a href="#" class="button">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="landing_wrapper d-flex align-items-center" style="background-image: url('<?php echo get_template_directory_uri();?>/img/home_3.jpg')">
+                        <div class="container w-100">
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-12 text-center">
+                                    <h1 class="heading text-white">Digital Marketing For <br> Startup Business</h1>
+                                    <p class="sub_heading mx-auto mt_20 text-white">Design is a way of life, a point of view. It involves the whole complex of visual communications: talent, creative ability manual.</p>
+                                    <div class="home_btn_wrapper mt_25">
+                                        <a href="#" class="blue_bg button">Get Started</a>
+                                        <a href="#" class="button">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- Hero Slider Section end -->
 
@@ -628,7 +659,7 @@
                                         </p>
                                         <div class="media align-items-center">
                                             <div class="client_img">
-                                                <img src="<?php echo get_template_directory_uri();?>/img/avatar-1.svg" alt="">
+                                                <img src="<?php echo get_template_directory_uri();?>/img/avatar-2.svg" alt="">
                                             </div>
                                             <div class="media-body">
                                                 <h4>Molly Robinson</h4>

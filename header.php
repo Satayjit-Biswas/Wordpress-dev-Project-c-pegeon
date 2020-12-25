@@ -41,10 +41,36 @@
                         <div class="menu_wrapper">
                             <?php
                             wp_nav_menu(array(
-                                'theme_location'=>"primary_menu",
-                                'menu_id'       =>"menu"
+                                'theme_location' =>'primary_menu',
+                                'menu_id'       =>'menu'
                             ));
                             ?>
+                            <!-- <ul id="menu">
+                                <li class="nav-item">
+                                    <a href="#home" class="active nav-link">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#about" class="nav-link">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#service" class="nav-link">Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#expert" class="nav-link">Experts</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#pricing" class="nav-link">Pricing</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#news" class="nav-link">News</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#contact" class="nav-link">Contact</a>
+                                </li>
+                            </ul> -->
                         </div>
                         <!--menu end-->
                         <div class="hamburger-menu">

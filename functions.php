@@ -22,8 +22,8 @@
     // js link
     function all_js(){
         wp_enqueue_script('jquery');
-        wp_enqueue_script('plugins', get_template_directory_uri(). '/js/plugins.js');
-        wp_enqueue_script('main', get_template_directory_uri().'/js/main.js');
+        wp_enqueue_script('plugins', get_theme_file_uri(). '/js/plugins.js');
+        wp_enqueue_script('main', get_theme_file_uri().'/js/main.js');
     }
     add_action('wp_enqueue_scripts','all_js');
 
@@ -31,3 +31,9 @@
     register_nav_menus(array(
         'primary_menu' =>'primary menu'
     ));
+    function add_menu_link_class($atts, $item, $args)
+    {
+    $atts['class'] = 'nav-link';
+    return $atts;
+    }
+    add_filter('nav_menu_link_attributes', 'add_menu_link_class', 1, 3);
