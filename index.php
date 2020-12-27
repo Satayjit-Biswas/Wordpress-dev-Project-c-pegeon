@@ -1,18 +1,19 @@
-<?php get_header();?>
+<?php get_header();
+global $pegeon_ver;?>
         <!-- start main content -->
         <main>
             <!-- Hero Slider Section Start -->
             <div class="hero_slider overflow-hidden" id="home">
                 <div class="owl-carousel">
-                    <div class="landing_wrapper d-flex align-items-center" style="background-image: url('<?php echo get_template_directory_uri();?>/img/home.jpg')">
+                    <div class="landing_wrapper d-flex align-items-center" style="background-image: url('<?php echo $pegeon_ver['slider_section_a_bg']['url'];?>')">
                         <div class="container w-100">
                             <div class="row justify-content-center align-items-center">
                                 <div class="col-12 text-center">
-                                    <h1 class="heading text-white">Digital Marketing For <br> Startup Business</h1>
-                                    <p class="sub_heading mx-auto mt_20 text-white">Design is a way of life, a point of view. It involves the whole complex of visual communications: talent, creative ability manual.</p>
+                                    <h1 class="heading text-white"><?php echo $pegeon_ver['slider_section_a_text_a_id'];?></h1>
+                                    <p class="sub_heading mx-auto mt_20 text-white"><?php echo $pegeon_ver['slider_section_a_text_b_id'];?></p>
                                     <div class="home_btn_wrapper mt_25">
-                                        <a href="#" class="blue_bg button">Get Started</a>
-                                        <a href="#" class="button">Contact Us</a>
+                                        <a href="<?php echo $pegeon_ver['slider_section_leftbutton_url_id'];?>" class="blue_bg button"><?php echo $pegeon_ver['slider_section_leftbutton_text_id'];?></a>
+                                        <a href="<?php echo $pegeon_ver['slider_section_rightbutton_url_id'];?>" class="button"><?php echo $pegeon_ver['slider_section_rightbutton_text_id'];?></a>
                                     </div>
                                 </div>
                             </div>
@@ -23,11 +24,11 @@
                         <div class="container w-100">
                             <div class="row justify-content-center align-items-center">
                                 <div class="col-12 text-center">
-                                    <h1 class="heading text-white">Digital Marketing For <br> Startup Business</h1>
-                                    <p class="sub_heading mx-auto mt_20 text-white">Design is a way of life, a point of view. It involves the whole complex of visual communications: talent, creative ability manual.</p>
+                                    <h1 class="heading text-white"><?php echo $pegeon_ver['slider_section_b_text_a_id'];?></h1>
+                                    <p class="sub_heading mx-auto mt_20 text-white"><?php echo $pegeon_ver['slider_section_b_text_b_id'];?></p>
                                     <div class="home_btn_wrapper mt_25">
-                                        <a href="#" class="blue_bg button">Get Started</a>
-                                        <a href="#" class="button">Contact Us</a>
+                                        <a href="<?php echo $pegeon_ver['slider_section_leftbutton_url_id'];?>" class="blue_bg button"><?php echo $pegeon_ver['slider_section_leftbutton_text_id'];?></a>
+                                        <a href="<?php echo $pegeon_ver['slider_section_rightbutton_url_id'];?>" class="button"><?php echo $pegeon_ver['slider_section_rightbutton_text_id'];?></a>
                                     </div>
                                 </div>
                             </div>
@@ -38,11 +39,11 @@
                         <div class="container w-100">
                             <div class="row justify-content-center align-items-center">
                                 <div class="col-12 text-center">
-                                    <h1 class="heading text-white">Digital Marketing For <br> Startup Business</h1>
-                                    <p class="sub_heading mx-auto mt_20 text-white">Design is a way of life, a point of view. It involves the whole complex of visual communications: talent, creative ability manual.</p>
+                                    <h1 class="heading text-white"><?php echo $pegeon_ver['slider_section_c_text_a_id'];?></h1>
+                                    <p class="sub_heading mx-auto mt_20 text-white"><?php echo $pegeon_ver['slider_section_c_text_b_id'];?></p>
                                     <div class="home_btn_wrapper mt_25">
-                                        <a href="#" class="blue_bg button">Get Started</a>
-                                        <a href="#" class="button">Contact Us</a>
+                                        <a href="<?php echo $pegeon_ver['slider_section_leftbutton_url_id'];?>" class="blue_bg button"><?php echo $pegeon_ver['slider_section_leftbutton_text_id'];?></a>
+                                        <a href="<?php echo $pegeon_ver['slider_section_rightbutton_url_id'];?>" class="button"><?php echo $pegeon_ver['slider_section_rightbutton_text_id'];?></a>
                                     </div>
                                 </div>
                             </div>
@@ -58,29 +59,29 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6" data-aos="fade-right">
                             <div class="about_img_wrapper position-relative">
-                                <img src="<?php echo get_template_directory_uri();?>/img/about.jpg" class="img-fluid" alt="">
+                                <img src="<?php echo $pegeon_ver['about_section_img_id']['url'];?>" class="img-fluid" alt="">
                             </div>
                         </div>
                         <div class="col-lg-6 mt_md_30 pl-lg-5" data-aos="fade-left">
                             <div class="row">
                                 <div class="col-12">
-                                    <p class="title_top">About Us</p>
-                                    <h2 class="title_1">We are the largest Business expert in Europe and Asia</h2>
-                                    <p class="title_2">Sorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                                    <p class="title_top"><?php echo $pegeon_ver['about_section_text_a_id'];?></p>
+                                    <h2 class="title_1"><?php echo $pegeon_ver['about_section_text_b_id'];?></h2>
+                                    <p class="title_2"><?php echo $pegeon_ver['about_section_text_c_id'];?></p>
                                 </div>
                                 <div class="col-sm-6 mt_30">
                                     <div class="counter_wrapper mb_10">
-                                        <span><span class="count">82</span>+</span>
+                                        <span><span class="count"><?php echo $pegeon_ver['about_section_counter_a_text_a_id'];?></span>+</span>
                                     </div>
-                                    <h4>Project Complete</h4>
-                                    <p>Lorem Ipsum is simply dummy text of the printing type setting</p>
+                                    <h4><?php echo $pegeon_ver['about_section_counter_a_text_b_id'];?></h4>
+                                    <p><?php echo $pegeon_ver['about_section_counter_a_text_c_id'];?></p>
                                 </div>
                                 <div class="col-sm-6 mt_30">
                                     <div class="counter_wrapper mb_10">
-                                        <span><span class="count">24</span>%</span>
+                                        <span><span class="count"><?php echo $pegeon_ver['about_section_counter_b_text_a_id'];?></span>%</span>
                                     </div>
-                                    <h4>Great Results</h4>
-                                    <p>Lorem Ipsum is simply dummy text of the printing type setting</p>
+                                    <h4><?php echo $pegeon_ver['about_section_counter_b_text_b_id'];?></h4>
+                                    <p><?php echo $pegeon_ver['about_section_counter_b_text_c_id'];?></p>
                                 </div>
                             </div>
                         </div>

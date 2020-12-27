@@ -1,4 +1,4 @@
-
+<?Php global $pegeon_ver?>
         <!-- start footer -->
         <footer>
             <div class="container">
@@ -12,7 +12,7 @@
                         </ul>
                     </div>
                     <div class="col-md-8 mt_20 order-md-1">
-                        <p>Copyright 2020. All Rights Reserved</p>
+                        <p><?php echo $pegeon_ver['footer_section_text_id'];?></p>
                     </div>
                 </div>
             </div>

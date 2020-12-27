@@ -1,3 +1,4 @@
+<?php global $pegeon_ver;?>
 <!DOCTYPE html>
 <html <?php language_attributes();?>>
     
@@ -33,7 +34,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-8 text-left">
                         <!--logo start-->
-                        <a href="index-5.html" class="logo"><img src="<?php echo get_template_directory_uri();?>/img/logo.png" alt=""></a>
+                        <a href="index-5.html" class="logo"><img src="<?php echo $pegeon_ver['logo_section_img_id']['url']; ?>" alt=""></a>
                         <!--logo end-->
                     </div>
                     <div class="col-lg-9 col-4">
@@ -42,7 +43,9 @@
                             <?php
                             wp_nav_menu(array(
                                 'theme_location' =>'primary_menu',
-                                'menu_id'       =>'menu'
+                                'menu_id'       =>'menu',
+                                'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                                'walker' => new WP_Bootstrap_Navwalker(),
                             ));
                             ?>
                             <!-- <ul id="menu">

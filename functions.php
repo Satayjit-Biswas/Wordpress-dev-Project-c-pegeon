@@ -29,11 +29,29 @@
 
     // menu setup 
     register_nav_menus(array(
-        'primary_menu' =>'primary menu'
-    ));
+            'primary_menu' => 'primaray menu'
+        ));
+    
+        function callback(){ 
+    ?>
+            <a href="<?php echo esc_url(site_url()); ?>/wp-admin/nav-menus.php?action=edit&menu=0">Create Menu</a>
+    <?php
+        }
+        if ( !file_exists( get_template_directory() . '/class-wp-bootstrap-navwalker.php' ) ) {
+            return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker' ) );
+        } 
+        else {
+            require_once get_template_directory() .'/class-wp-bootstrap-navwalker.php';
+        }
     function add_menu_link_class($atts, $item, $args)
     {
     $atts['class'] = 'nav-link';
     return $atts;
     }
     add_filter('nav_menu_link_attributes', 'add_menu_link_class', 1, 3);
+
+
+
+
+    require_once('inc/redux-framework/redux-framework.php');
+    require_once('inc/barebones-config.php');
