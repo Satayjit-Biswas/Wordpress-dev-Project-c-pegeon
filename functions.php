@@ -51,7 +51,25 @@
     add_filter('nav_menu_link_attributes', 'add_menu_link_class', 1, 3);
 
 
+    function social_icon(){
+        register_post_type('social_icon_id',array(
+            'labels' => array(
+                'menu_name' => 'Social icon',
+                'name'      => 'Social icon',
+                'add_new'   => 'Add New Social',
+                'all_items' => 'All Posts',
+                'add_new_item'=>'Add New Social',
+                ),
+            'public'        => true,
+            'supports'       => array('title'),
+            'menu_icon'     =>'dashicons-clipboard',
+
+        ));
+    }
+    add_action('init','social_icon');
+    require_once('inc/cmb2-custom.php');
 
 
     require_once('inc/redux-framework/redux-framework.php');
     require_once('inc/barebones-config.php');
+    
