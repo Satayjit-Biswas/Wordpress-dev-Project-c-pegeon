@@ -49,7 +49,19 @@
     return $atts;
     }
     add_filter('nav_menu_link_attributes', 'add_menu_link_class', 1, 3);
-
+    // Service setup
+    function service_custom(){
+        register_post_type('service_custom_id',array(
+            'labels' => array(
+                'menu_name' => 'Services Section',
+                'name'      => 'services_section',
+                'add_new'   => 'Add New Social',
+                'all_items' => 'All Posts',
+                'add_new_item'=>'Add New Service',
+                ),
+            'public'        => true,
+            'supports'       => array('title','editor'),
+            'menu_icon'     =>'dashicons-share',
 
     function social_icon(){
         register_post_type('social_icon_id',array(

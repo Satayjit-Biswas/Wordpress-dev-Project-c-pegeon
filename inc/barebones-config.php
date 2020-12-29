@@ -526,6 +526,226 @@
                 ),
             )
         ) );
+    // -> All text section
+    Redux::setSection( $opt_name, array(
+        'title' => __( 'All Text section', 'pegeon' ),
+        'id'    => 'text_section',
+        'desc'  => __( 'All Text Section Option.', 'pegeon' ),
+        'icon'  => 'el  el-list-alt'
+        ) );
+        // -> Service text
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Service Section text', 'pegeon' ),
+            'desc'       => __( 'Service text, visit: ', 'pegeon' ),
+            'id'         => 'service_text_section_text',
+            'subsection' => true,
+            'fields'     => array(
+                array(
+                    'id'       => 'service_text_section_text_a_id',
+                    'type'     => 'text',
+                    'title'    => __( 'Title', 'pegeon' ),
+                    'desc'     => __( 'Type your text', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => 'Our special services'
+                ),
+                array(
+                    'id'       => 'service_text_section_text_b_id',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Sub-Title', 'pegeon' ),
+                    'desc'     => __( 'Type your text', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+                ),
+            )
+        ) );
+        // -> Portfolio text
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Portfolio Section text', 'pegeon' ),
+            'desc'       => __( 'Portfolio text, visit: ', 'pegeon' ),
+            'id'         => 'portfolio_text_section_text',
+            'subsection' => true,
+            'fields'     => array(
+                array(
+                    'id'       => 'portfolio_text_section_text_a_id',
+                    'type'     => 'text',
+                    'title'    => __( 'Title', 'pegeon' ),
+                    'desc'     => __( 'type your text', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => 'Our Recent Projects'
+                ),
+                array(
+                    'id'       => 'portfolio_text_section_text_b_id',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Sub-Title', 'pegeon' ),
+                    'desc'     => __( 'type your text', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+                ),
+            )
+        ) );
+        // -> Expert text
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Expert Section text', 'pegeon' ),
+            'desc'       => __( 'Expert text, visit: ', 'pegeon' ),
+            'id'         => 'Expert_text_section_text',
+            'subsection' => true,
+            'fields'     => array(
+                array(
+                    'id'       => 'expert_text_section_text_a_id',
+                    'type'     => 'text',
+                    'title'    => __( 'Title', 'pegeon' ),
+                    'desc'     => __( 'type your text', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => 'Meet Our Expert'
+                ),
+                array(
+                    'id'       => 'expert_text_section_text_b_id',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Sub-Title', 'pegeon' ),
+                    'desc'     => __( 'type your text', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+                ),
+            )
+        ) );
+        // -> Faq text
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Faq Section text', 'pegeon' ),
+            'desc'       => __( 'Faq text, visit: ', 'pegeon' ),
+            'id'         => 'Faq_text_section_text',
+            'subsection' => true,
+            'fields'     => array(
+                array(
+                    'id'       => 'faq_text_section_text_a_id',
+                    'type'     => 'text',
+                    'title'    => __( 'Title', 'pegeon' ),
+                    'desc'     => __( 'type your text', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => 'Ask Something From
+                    '
+                ),
+                array(
+                    'id'       => 'faq_text_section_text_b_id',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Sub-Title', 'pegeon' ),
+                    'desc'     => __( 'type your text', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+                ),
+                array(
+                    'id'       => 'faq_text_section_img_id',
+                    'type'     => 'media',
+                    'title'    => __( 'Img', 'pegeon' ),
+                    'desc'     => __( 'type your text', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => array(
+                        'url'  => get_template_directory_uri().'/img/boost-img.png'
+                    ),
+                ),
+            )
+        ) );
+        // -> Pricing text
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Pricing Section text', 'pegeon' ),
+            'desc'       => __( 'Pricing text, visit: ', 'pegeon' ),
+            'id'         => 'Pricing_text_section_text',
+            'subsection' => true,
+            'fields'     => array(
+                array(
+                    'id'       => 'pricing_text_section_text_a_id',
+                    'type'     => 'text',
+                    'title'    => __( 'Title', 'pegeon' ),
+                    'desc'     => __( 'type your text', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => 'Our Pricing Plan'
+                ),
+                array(
+                    'id'       => 'pricing_text_section_text_b_id',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Sub-Title', 'pegeon' ),
+                    'desc'     => __( 'type your text', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+                ),
+            )
+        ) );
+        // -> Feedback text
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Feedback Section text', 'pegeon' ),
+            'desc'       => __( 'Feedback text, visit: ', 'pegeon' ),
+            'id'         => 'Feedback_text_section_text',
+            'subsection' => true,
+            'fields'     => array(
+                array(
+                    'id'       => 'feedback_text_section_text_a_id',
+                    'type'     => 'text',
+                    'title'    => __( 'Title', 'pegeon' ),
+                    'desc'     => __( 'type your text', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => 'Our Customers Feedback'
+                ),
+                array(
+                    'id'       => 'feedback_text_section_text_b_id',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Sub-Title', 'pegeon' ),
+                    'desc'     => __( 'type your text', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+                ),
+            )
+        ) );
+        // -> News text
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'News Section text', 'pegeon' ),
+            'desc'       => __( 'News text, visit: ', 'pegeon' ),
+            'id'         => 'News_text_section_text',
+            'subsection' => true,
+            'fields'     => array(
+                array(
+                    'id'       => 'news_text_section_text_a_id',
+                    'type'     => 'text',
+                    'title'    => __( 'Title', 'pegeon' ),
+                    'desc'     => __( 'type your text', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => 'Our Recent Updates'
+                ),
+                array(
+                    'id'       => 'news_text_section_text_b_id',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Sub-Title', 'pegeon' ),
+                    'desc'     => __( 'type your text', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+                ),
+            )
+        ) );
+        // -> Contact text
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Contact Section text', 'pegeon' ),
+            'desc'       => __( 'Contact text, visit: ', 'pegeon' ),
+            'id'         => 'Contact_text_section_text',
+            'subsection' => true,
+            'fields'     => array(
+                array(
+                    'id'       => 'contact_text_section_text_a_id',
+                    'type'     => 'text',
+                    'title'    => __( 'Title', 'pegeon' ),
+                    'desc'     => __( 'type your text', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => 'Contact Us'
+                ),
+                array(
+                    'id'       => 'contact_text_section_text_b_id',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Sub-Title', 'pegeon' ),
+                    'desc'     => __( 'type your text', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+                ),
+            )
+        ) );
+    
+
     // -> Footer section
     Redux::setSection( $opt_name, array(
         'title' => __( 'Footer Section', 'pegeon' ),
