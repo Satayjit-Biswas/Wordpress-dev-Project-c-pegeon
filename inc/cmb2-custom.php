@@ -4,16 +4,16 @@ require_once __DIR__ . '/CMB2/init.php';
 // service_section
 function service_section_fields(){
 	$service_section_metabox = new_cmb2_box( array(
-		'id'            => 'social_metabox',
-		'title'         => __( 'social section', 'Applad' ),
+		'id'            => 'service_metabox',
+		'title'         => __( 'service section', 'Applad' ),
 		'object_types'  => 'service_custom_id',
 		'context'       => 'normal',
 		'priority'      => 'high',
 		'show_names'    => true, 
 	) );
 	$service_section_metabox->add_field( array(
-		'name'       => __( 'social-name', 'cmb2' ),
-		'desc'       => __( 'input your social logo name (for example : fab fa-facebook-f,fab fa-twitter)', 'cmb2' ),
+		'name'       => __( 'service icon name', 'cmb2' ),
+		'desc'       => __( 'input your service icon name ( for example : fab fa-facebook-f , fab fa-twitter etc...)', 'cmb2' ),
 		'id'         => 'service_section_icon_nane',
 		'type'       => 'text',
 		'show_on_cb' => 'cmb2_hide_if_no_cats',

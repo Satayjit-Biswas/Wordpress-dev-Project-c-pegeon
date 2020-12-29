@@ -371,34 +371,34 @@
         ) );
         //left button 
         Redux::setSection( $opt_name, array(
-        'title'      => __( ' Left-button', 'pegeon' ),
-        'desc'       => __( 'Home button: ', 'pegeon' ),
-        'id'         => 'slider_section_leftbutton',
-        'subsection' => true,
-        'fields'     => array(
-            array(
-                'id'       => 'slider_section_leftbutton_text_id',
-                'type'     => 'text',
-                'title'    => __( 'leftbutton text', 'pegeon' ),
-                'desc'     => __( 'Type Your leftbutton text', 'pegeon' ),
-                'default'  => 'Get Started'
-            ),
-            array(
-                'id'       => 'slider_section_lrftbutton_url_id',
-                'type'     => 'text',
-                'title'    => __( 'leftbutton url', 'pegeon' ),
-                'desc'     => __( 'Type Your leftbutton url', 'pegeon' ),
-                'default'  => '#'
+            'title'      => __( ' Left-button', 'pegeon' ),
+            'desc'       => __( 'Home button: ', 'pegeon' ),
+            'id'         => 'slider_section_leftbutton',
+            'subsection' => true,
+            'fields'     => array(
+                array(
+                    'id'       => 'slider_section_leftbutton_text_id',
+                    'type'     => 'text',
+                    'title'    => __( 'leftbutton text', 'pegeon' ),
+                    'desc'     => __( 'Type Your leftbutton text', 'pegeon' ),
+                    'default'  => 'Get Started'
                 ),
-            ),
+                array(
+                    'id'       => 'slider_section_lrftbutton_url_id',
+                    'type'     => 'text',
+                    'title'    => __( 'leftbutton url', 'pegeon' ),
+                    'desc'     => __( 'Type Your leftbutton url', 'pegeon' ),
+                    'default'  => '#'
+                    ),
+                ),
         ) );
         //rifht button 
         Redux::setSection( $opt_name, array(
-        'title'      => __( 'Right-button', 'pegeon' ),
-        'desc'       => __( 'Home button: ', 'pegeon' ),
-        'id'         => 'slider_section_rightbutton',
-        'subsection' => true,
-        'fields'     => array(
+            'title'      => __( 'Right-button', 'pegeon' ),
+            'desc'       => __( 'Home button: ', 'pegeon' ),
+            'id'         => 'slider_section_rightbutton',
+            'subsection' => true,
+            'fields'     => array(
             array(
                 'id'       => 'slider_section_rightbutton_text_id',
                 'type'     => 'text',
@@ -463,66 +463,58 @@
                 ),
             )
         ) );
-        // About counter 1 
-        Redux::setSection( $opt_name, array(
-            'title'      => __( 'About counter 1', 'pegeon' ),
-            'desc'       => __( 'About Section counter 1, visit: ', 'pegeon' ),
-            'id'         => 'about_section_counter_a',
-            'subsection' => true,
-            'fields'     => array(
-                array(
-                    'id'       => 'about_section_counter_a_text_a_id',
-                    'type'     => 'text',
-                    'title'    => __('Counter Number', 'pegeon' ),
-                    'desc'     => __( 'Type Your Number', 'pegeon' ),
-                    'default'  => '82'
-                ),
-                array(
-                    'id'       => 'about_section_counter_a_text_b_id',
-                    'type'     => 'text',
-                    'title'    => __( 'Counter text', 'pegeon' ),
-                    'desc'     => __( 'Type Your Heading text', 'pegeon' ),
-                    'default'  => 'Project Complete
-                    '
-                ),
-                array(
-                    'id'       => 'about_section_counter_a_text_c_id',
-                    'type'     => 'textarea',
-                    'title'    => __( 'Counter sub text', 'pegeon' ),
-                    'desc'     => __( 'Type Your Heading text', 'pegeon' ),
-                    'default'  => 'Lorem Ipsum is simply dummy text of the printing type setting
-
-                    '
-                ),
-            )
+    // -> Banner section
+    Redux::setSection( $opt_name, array(
+        'title' => __( 'Banner Section', 'pegeon' ),
+        'id'    => 'Banner_section',
+        'desc'  => __( 'Banner Section Option.', 'pegeon' ),
+        'icon'  => 'el  el-flag'
         ) );
-        // About counter 2 
         Redux::setSection( $opt_name, array(
-            'title'      => __( 'About counter 2', 'pegeon' ),
-            'desc'       => __( 'About Section counter 2, visit: ', 'pegeon' ),
-            'id'         => 'about_section_counter_b',
+            'title'      => __( 'Banner Text', 'pegeon' ),
+            'desc'       => __( 'Banner Section All Data, visit: ', 'pegeon' ),
+            'id'         => 'Banner_section_post',
             'subsection' => true,
             'fields'     => array(
                 array(
-                    'id'       => 'about_section_counter_b_text_a_id',
-                    'type'     => 'text',
-                    'title'    => __('Counter Number', 'pegeon' ),
-                    'desc'     => __( 'Type Your Number', 'pegeon' ),
-                    'default'  => '24'
+                    'id'       => 'Banner_section_img_id',
+                    'type'     => 'media',
+                    'title'    => __( 'Bg Img', 'pegeon' ),
+                    'desc'     => __( 'Upload your Banner Bg Img', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => array(
+                        'url'  => get_template_directory_uri().'/img/banner.jpg'
+                    ),
                 ),
                 array(
-                    'id'       => 'about_section_counter_b_text_b_id',
+                    'id'       => 'Banner_section_text_a_id',
                     'type'     => 'text',
-                    'title'    => __( 'Counter text', 'pegeon' ),
+                    'title'    => __( 'Heading text', 'pegeon' ),
                     'desc'     => __( 'Type Your Heading text', 'pegeon' ),
-                    'default'  => 'Great Results'
+                    'default'  => 'Let’s create something together?
+                    '
                 ),
+                
                 array(
-                    'id'       => 'about_section_counter_b_text_c_id',
+                    'id'       => 'Banner_section_text_b_id',
                     'type'     => 'textarea',
-                    'title'    => __( 'Counter sub text', 'pegeon' ),
+                    'title'    => __( 'Sub text', 'pegeon' ),
                     'desc'     => __( 'Type Your Heading text', 'pegeon' ),
-                    'default'  => 'Lorem Ipsum is simply dummy text of the printing type setting'
+                    'default'  => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+                ),
+                array(
+                    'id'       => 'Banner_section_text_c_id',
+                    'type'     => 'text',
+                    'title'    => __( 'Button text', 'pegeon' ),
+                    'desc'     => __( 'Type Your Heading text', 'pegeon' ),
+                    'default'  => 'Contact Us'
+                ),
+                array(
+                    'id'       => 'Banner_section_text_url_id',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Button url', 'pegeon' ),
+                    'desc'     => __( 'Type Your Heading text', 'pegeon' ),
+                    'default'  => '#'
                 ),
             )
         ) );

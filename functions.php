@@ -3,7 +3,7 @@
     function theme_support(){
         add_theme_support('title-tag');
         add_theme_support('menu');
-
+        add_theme_support('post-thumbnails');
     }
     add_action('after_setup_theme','theme_support');
     // css link
@@ -26,16 +26,15 @@
         wp_enqueue_script('main', get_theme_file_uri().'/js/main.js');
     }
     add_action('wp_enqueue_scripts','all_js');
-
     // menu setup 
     register_nav_menus(array(
             'primary_menu' => 'primaray menu'
         ));
     
         function callback(){ 
-    ?>
+        ?>
             <a href="<?php echo esc_url(site_url()); ?>/wp-admin/nav-menus.php?action=edit&menu=0">Create Menu</a>
-    <?php
+        <?php
         }
         if ( !file_exists( get_template_directory() . '/class-wp-bootstrap-navwalker.php' ) ) {
             return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker' ) );
@@ -44,10 +43,10 @@
             require_once get_template_directory() .'/class-wp-bootstrap-navwalker.php';
         }
     function add_menu_link_class($atts, $item, $args)
-    {
-    $atts['class'] = 'nav-link';
-    return $atts;
-    }
+        {
+        $atts['class'] = 'nav-link';
+        return $atts;
+        }
     add_filter('nav_menu_link_attributes', 'add_menu_link_class', 1, 3);
     // Service setup
     function service_custom(){
@@ -63,6 +62,10 @@
             'supports'       => array('title','editor'),
             'menu_icon'     =>'dashicons-share',
 
+        ));
+    }
+    add_action('init','service_custom');
+    // social_icon
     function social_icon(){
         register_post_type('social_icon_id',array(
             'labels' => array(
@@ -74,14 +77,14 @@
                 ),
             'public'        => true,
             'supports'       => array('title'),
-            'menu_icon'     =>'dashicons-clipboard',
+            'menu_icon'     =>'dashicons-share',
 
         ));
     }
     add_action('init','social_icon');
+
+
     require_once('inc/cmb2-custom.php');
-
-
     require_once('inc/redux-framework/redux-framework.php');
     require_once('inc/barebones-config.php');
     

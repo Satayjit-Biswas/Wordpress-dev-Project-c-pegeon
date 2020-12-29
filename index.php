@@ -95,10 +95,38 @@ global $pegeon_ver;?>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-12 text-center mb_30" data-aos="zoom-in">
-                            <h2 class="title_1">Our special services</h2>
-                            <p class="title_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                            <h2 class="title_1"><?php echo $pegeon_ver['service_text_section_text_a_id'];?></h2>
+                            <p class="title_2"><?php echo $pegeon_ver['service_text_section_text_b_id'];?></p>
                         </div>
-                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <?php
+                            $service_section_post = new WP_Query(array(
+                                'post_type'      => 'service_custom_id',
+                                'posts_per_page' => -1,
+                                'order'          => 'ASC'
+                            ));
+
+                                if ($service_section_post -> have_posts()) {
+                                    while($service_section_post -> have_posts()) : $service_section_post -> the_post();
+                                        $service_icon_text = get_post_meta(get_the_ID(),'service_section_icon_nane',true);
+
+                                ?>
+                                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                                        <div class="service_box mt_30">
+                                            <div class="service_icon">
+                                                <i class="<?php echo $service_icon_text;?>"></i>
+                                            </div>
+                                            <h3 class="title mt_40 mb_20"><?php the_title();?></h3>
+                                            <p class="description">
+                                                <?php the_excerpt();?>
+                                            </p>
+                                        </div>
+                                    </div>
+                                <?php
+                                endwhile;
+                                }
+                                else {
+                                    ?>
+                       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                             <div class="service_box mt_30">
                                 <div class="service_icon">
                                     <i class="fal fa-edit"></i>
@@ -164,21 +192,24 @@ global $pegeon_ver;?>
                                 </p>
                             </div>
                         </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
             <!-- end service wrapper -->
 
             <!-- start banner wrapper -->
-            <div class="banner_wrapper jarallax" style="background-image: url('<?php echo get_template_directory_uri();?>/img/banner.jpg');">
+            <div class="banner_wrapper jarallax" style="background-image: url('<?php echo $pegeon_ver['Banner_section_img_id']['url'];?>">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-md-8">
-                            <h2 class="title_1">Let’s create something together?</h2>
-                            <p class="title_2 mt-2">Contact us without any hesitate</p>
+                            <h2 class="title_1"><?php echo $pegeon_ver['Banner_section_text_a_id'];?></h2>
+                            <p class="title_2 mt-2"><?php echo $pegeon_ver['Banner_section_text_b_id'];?></p>
                         </div>
                         <div class="col-md-4 banner_button_wrapper">
-                            <a href="#" class="blue_bg button">Contact Us</a>
+                            <a href="<?php echo $pegeon_ver['Banner_section_text_url_id'];?>" class="blue_bg button"><?php echo $pegeon_ver['Banner_section_text_c_id'];?></a>
                         </div>
                     </div>
                 </div>
@@ -213,8 +244,9 @@ global $pegeon_ver;?>
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-center" data-aos="zoom-in">
-                            <h2 class="title_1">Our Recent Projects</h2>
-                            <p class="title_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tem incididunt ut labore et dolore magna aliqua.</p>
+                            <h2 class="title_1"><?php echo $pegeon_ver['portfolio_text_section_text_a_id'];?></h2>
+                            <p class="title_2"><?php echo $pegeon_ver['portfolio_text_section_text_b_id'];?></p>
+                            
                             <div class="project_filter_menu mt_40">
                                 <ul>
                                     <li data-filter="*" class="active">View All</li>
@@ -303,8 +335,8 @@ global $pegeon_ver;?>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-12 text-center mb_30" data-aos="zoom-in">
-                            <h2 class="title_1">Meet Our Expert</h2>
-                            <p class="title_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                            <h2 class="title_1"><?php echo $pegeon_ver['expert_text_section_text_a_id'];?></h2>
+                            <p class="title_2"><?php echo $pegeon_ver['expert_text_section_text_b_id'];?></p>
                         </div>
                         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                             <div class="single_expert mt_30">
@@ -367,8 +399,8 @@ global $pegeon_ver;?>
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-12 text-center mb_60" data-aos="zoom-in">
-                            <h2 class="title_1">Ask Something From</h2>
-                            <p class="title_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                            <h2 class="title_1"><?php echo $pegeon_ver['faq_text_section_text_a_id'];?></h2>
+                            <p class="title_2"><?php echo $pegeon_ver['faq_text_section_text_b_id'];?></p>
                         </div>
                         <div class="col-lg-6" data-aos="fade-right">
                             <div class="accordion" id="accordion">
@@ -419,7 +451,7 @@ global $pegeon_ver;?>
                             </div>
                         </div>
                         <div class="col-lg-6 text-center mt_md_30" data-aos="fade-left">
-                            <img src="<?php echo get_template_directory_uri();?>/img/boost-img.png" class="img-fluid" alt="">
+                            <img src="<?php echo  $pegeon_ver['faq_text_section_img_id']['url']?>" class="img-fluid" alt="">
                         </div>
                     </div>
                 </div>
@@ -431,8 +463,8 @@ global $pegeon_ver;?>
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 text-center" data-aos="zoom-in">
-                            <h2 class="title_1">Our Pricing Plan</h2>
-                            <p class="title_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+                            <h2 class="title_1"><?php echo $pegeon_ver['pricing_text_section_text_a_id'];?></h2>
+                            <p class="title_2"><?php echo $pegeon_ver['pricing_text_section_text_b_id'];?></p></p>
                         </div>
                     </div>
                     <div class="row">
@@ -648,8 +680,8 @@ global $pegeon_ver;?>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-12 text-center mb_60" data-aos="zoom-in">
-                            <h2 class="title_1">Our Customers Feedback</h2>
-                            <p class="title_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                            <h2 class="title_1"><?php echo $pegeon_ver['feedback_text_section_text_a_id'];?></h2>
+                            <p class="title_2"><?php echo $pegeon_ver['feedback_text_section_text_b_id'];?></p>
                         </div>
                         <div class="col-md-12">
                             <div class="owl-carousel testi_carousel">
@@ -713,8 +745,8 @@ global $pegeon_ver;?>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-12 text-center mb_30" data-aos="zoom-in">
-                            <h2 class="title_1">Our Recent Updates</h2>
-                            <p class="title_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore  magna aliqua</p>
+                            <h2 class="title_1"><?php echo $pegeon_ver['news_text_section_text_a_id'];?></h2>
+                            <p class="title_2"><?php echo $pegeon_ver['news_text_section_text_b_id'];?></p>
                         </div>
                         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                             <div class="single_news mt_30">
@@ -756,8 +788,8 @@ global $pegeon_ver;?>
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-center mb_30" data-aos="zoom-in">
-                            <h2 class="title_1">Contact Us</h2>
-                            <p class="title_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+                            <h2 class="title_1"><?php echo $pegeon_ver['contact_text_section_text_a_id'];?></h2>
+                            <p class="title_2"><?php echo $pegeon_ver['contact_text_section_text_b_id'];?></p>
                         </div>
                         <div class="col-lg-5 col-xl-4 mt_30" data-aos="fade-right">
                             <aside>

@@ -17,14 +17,20 @@
                                         $social_name = get_post_meta(get_the_ID(),'social_section_logo_nane',true);
                                         $social_link = get_post_meta(get_the_ID(),'social_section_logo_link',true);
 
-                        ?>
-                            <li><a href="<?php echo $social_link;?>"><i class="<?php echo $social_name;?>"></i></a></li>
-
-                        <?php
-                        endwhile;
-                        }
-
-                         ?>
+                                ?>
+                                <li><a href="<?php echo $social_link;?>"><i class="<?php echo $social_name;?>"></i></a></li>
+                                <?php
+                                endwhile;
+                                }
+                                else {
+                                    ?>
+                                <li><a href="#a"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                <?php
+                                }
+                                ?>
                             <!-- <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fab fa-instagram"></i></a></li>
