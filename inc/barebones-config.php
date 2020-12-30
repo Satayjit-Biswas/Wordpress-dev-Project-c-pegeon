@@ -518,6 +518,89 @@
                 ),
             )
         ) );
+    // -> Grow section
+    Redux::setSection( $opt_name, array(
+        'title' => __( 'Grow Section', 'pegeon' ),
+        'id'    => 'grow_section',
+        'desc'  => __( 'Grow Section Option.', 'pegeon' ),
+        'icon'  => 'el  el-flag'
+        ) );
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Grow Text', 'pegeon' ),
+            'desc'       => __( 'Grow Section All Data, visit: ', 'pegeon' ),
+            'id'         => 'grow_section_post',
+            'subsection' => true,
+            'fields'     => array(
+                array(
+                    'id'       => 'grow_section_img_id',
+                    'type'     => 'media',
+                    'title'    => __( 'Bg Img', 'pegeon' ),
+                    'desc'     => __( 'Upload your grow Img', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => array(
+                        'url'  => get_template_directory_uri().'/img/faq.png'
+                    ),
+                ),
+                array(
+                    'id'       => 'grow_section_text_a_id',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Heading text', 'pegeon' ),
+                    'desc'     => __( 'Type Your Heading text', 'pegeon' ),
+                    'default'  => 'Grow your <span class="blue_text">business earn</span> <br class="d-none d-lg-block"> more money'
+                ),
+                
+                array(
+                    'id'       => 'grow_section_text_b_id',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Sub text', 'pegeon' ),
+                    'desc'     => __( 'Type Your sub Heading text', 'pegeon' ),
+                    'default'  => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu'
+                ),
+                array(
+                    'id'       => 'grow_section_text_c_id',
+                    'type'     => 'textarea',
+                    'title'    => __( 'li text', 'pegeon' ),
+                    'desc'     => __( 'Type Your li text', 'pegeon' ),
+                    'default'  => 'Innovation idea for business tecnology which is best in the world
+                    '
+                ),
+                array(
+                    'id'       => 'grow_section_text_d_id',
+                    'type'     => 'textarea',
+                    'title'    => __( 'li text', 'pegeon' ),
+                    'desc'     => __( 'Type Your li text', 'pegeon' ),
+                    'default'  => 'Famous online marketing agency in this modern country'
+                ),
+                array(
+                    'id'       => 'grow_section_text_e_id',
+                    'type'     => 'textarea',
+                    'title'    => __( 'li text', 'pegeon' ),
+                    'desc'     => __( 'Type Your li text', 'pegeon' ),
+                    'default'  => 'Digital content marketing online agency in the world'
+                ),
+                array(
+                    'id'       => 'grow_section_text_f_id',
+                    'type'     => 'textarea',
+                    'title'    => __( 'li text', 'pegeon' ),
+                    'desc'     => __( 'Type Your li text', 'pegeon' ),
+                    'default'  => 'Follow this steps for growing your business profit'
+                ),
+                array(
+                    'id'       => 'grow_section_button_text_id',
+                    'type'     => 'text',
+                    'title'    => __( 'Button text', 'pegeon' ),
+                    'desc'     => __( 'Type Your Heading text', 'pegeon' ),
+                    'default'  => 'Read More'
+                ),
+                array(
+                    'id'       => 'grow_section_button_url_id',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Button url', 'pegeon' ),
+                    'desc'     => __( 'Type Your Heading text', 'pegeon' ),
+                    'default'  => '#'
+                ),
+            )
+        ) );
     // -> All text section
     Redux::setSection( $opt_name, array(
         'title' => __( 'All Text section', 'pegeon' ),
