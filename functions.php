@@ -4,6 +4,7 @@
         add_theme_support('title-tag');
         add_theme_support('menu');
         add_theme_support('post-thumbnails');
+        add_image_size( 'expert_man', 370, 450 );
     }
     add_action('after_setup_theme','theme_support');
     // css link
@@ -26,7 +27,7 @@
         wp_enqueue_script('main', get_theme_file_uri().'/js/main.js');
     }
     add_action('wp_enqueue_scripts','all_js');
-    // menu setup 
+    // menu section setup 
     register_nav_menus(array(
             'primary_menu' => 'primaray menu'
         ));
@@ -48,24 +49,41 @@
         return $atts;
         }
     add_filter('nav_menu_link_attributes', 'add_menu_link_class', 1, 3);
-    // Service setup
+    // Service section setup
     function service_custom(){
         register_post_type('service_custom_id',array(
             'labels' => array(
                 'menu_name' => 'Services Section',
-                'name'      => 'services_section',
+                'name'      => 'Services Section',
                 'add_new'   => 'Add New Social',
                 'all_items' => 'All Posts',
                 'add_new_item'=>'Add New Service',
                 ),
             'public'        => true,
             'supports'       => array('title','editor'),
-            'menu_icon'     =>'dashicons-share',
+            'menu_icon'     =>'dashicons-hammer',
 
         ));
     }
     add_action('init','service_custom');
-    // social_icon
+    // Expert section setup
+    function expert_custom(){
+        register_post_type('expert_custom_id',array(
+            'labels' => array(
+                'menu_name' => 'Expert Man Section',
+                'name'      => 'Expert Man',
+                'add_new'   => 'Add New Expert Man',
+                'all_items' => 'All Posts',
+                'add_new_item'=>'Add New expert',
+                ),
+            'public'        => true,
+            'supports'       => array('title','editor','thumbnail'),
+            'menu_icon'     =>'dashicons-hammer',
+
+        ));
+    }
+    add_action('init','expert_custom');
+    // social icon section
     function social_icon(){
         register_post_type('social_icon_id',array(
             'labels' => array(

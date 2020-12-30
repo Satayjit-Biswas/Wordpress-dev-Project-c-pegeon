@@ -19,8 +19,49 @@ function service_section_fields(){
 		'show_on_cb' => 'cmb2_hide_if_no_cats',
 	));
 }
-	add_action( 'cmb2_admin_init', 'service_section_fields' );
-// social_section
+add_action( 'cmb2_admin_init', 'service_section_fields' );
+// expert_section
+function expert_section_fields(){
+	$expert_section_metabox = new_cmb2_box( array(
+		'id'            => 'expert_metabox',
+		'title'         => __( 'Expert Social Section', 'Applad' ),
+		'object_types'  => 'expert_custom_id',
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true, 
+	) );
+	$expert_section_metabox->add_field( array(
+		'name'       => __( 'Facebook-link', 'cmb2' ),
+		'desc'       => __( 'input your Facebook link', 'cmb2' ),
+		'id'         => 'expert_section_facebook_link',
+		'type'       => 'textarea',
+		'show_on_cb' => 'cmb2_hide_if_no_cats',
+	));
+	$expert_section_metabox->add_field( array(
+		'name'       => __( 'Twitter-link', 'cmb2' ),
+		'desc'       => __( 'input your Twitter link', 'cmb2' ),
+		'id'         => 'expert_section_twitter_link',
+		'type'       => 'textarea',
+		'show_on_cb' => 'cmb2_hide_if_no_cats',
+	));
+	$expert_section_metabox->add_field( array(
+		'name'       => __( 'Instagram-link', 'cmb2' ),
+		'desc'       => __( 'input your Instagram link', 'cmb2' ),
+		'id'         => 'expert_section_instagram_link',
+		'type'       => 'textarea',
+		'show_on_cb' => 'cmb2_hide_if_no_cats',
+	));
+	$expert_section_metabox->add_field( array(
+		'name'       => __( 'Linkedin-link', 'cmb2' ),
+		'desc'       => __( 'input your Linkedin link', 'cmb2' ),
+		'id'         => 'expert_section_linkedin_link',
+		'type'       => 'textarea',
+		'show_on_cb' => 'cmb2_hide_if_no_cats',
+	));
+
+}
+add_action( 'cmb2_admin_init', 'expert_section_fields' );
+// social_icon
 function social_section_fields(){
 	$social_section_metabox = new_cmb2_box( array(
 		'id'            => 'social_metabox',

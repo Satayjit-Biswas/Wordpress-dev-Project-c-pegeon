@@ -221,15 +221,15 @@ global $pegeon_ver;?>
                 <div class="container">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-lg-7" data-aos="fade-right">
-                            <h2 class="title_1">Grow your <span class="blue_text">business earn</span> <br class="d-none d-lg-block"> more money</h2>
-                            <p class="title_2 mb_25">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+                            <h2 class="title_1"><?php echo $pegeon_ver['grow_section_text_a_id'];?></h2>
+                            <p class="title_2 mb_25"><?php echo $pegeon_ver['grow_section_text_b_id'];?></p>
                             <ul class="technics">
-                                <li>Innovation idea for business tecnology which is best in the world</li>
-                                <li>Famous online marketing agency in this modern country</li>
-                                <li>Digital content marketing online agency in the world </li>
-                                <li>Follow this steps for growing your business profit</li>
+                                <li><?php echo $pegeon_ver['grow_section_text_c_id'];?></li>
+                                <li><?php echo $pegeon_ver['grow_section_text_d_id'];?></li>
+                                <li><?php echo $pegeon_ver['grow_section_text_e_id'];?></li>
+                                <li><?php echo $pegeon_ver['grow_section_text_f_id'];?></li>
                             </ul>
-                            <a href="#" class="blue_bg button mt_40">Read More</a>
+                            <a href="<?php echo $pegeon_ver['grow_section_button_url_id'];?>" class="blue_bg button mt_40"><?php echo $pegeon_ver['grow_section_button_text_id'];?></a>
                         </div>
                         <div class="col-lg-5 mt_md_30" data-aos="fade-left">
                             <img src="<?php echo get_template_directory_uri();?>/img/faq.png" class="img-fluid" alt="">
@@ -338,6 +338,44 @@ global $pegeon_ver;?>
                             <h2 class="title_1"><?php echo $pegeon_ver['expert_text_section_text_a_id'];?></h2>
                             <p class="title_2"><?php echo $pegeon_ver['expert_text_section_text_b_id'];?></p>
                         </div>
+                        <?php
+                            $expert_section_post = new WP_Query(array(
+                                'post_type'      => 'expert_custom_id',
+                                'posts_per_page' => -1,
+                                'order'          => 'ASC'
+                            ));
+
+                                if ($expert_section_post -> have_posts()) {
+                                    while($expert_section_post -> have_posts()) : $expert_section_post -> the_post();
+                                        $facebook_link = get_post_meta(get_the_ID(),'expert_section_facebook_link',true);
+                                        $twitter_link = get_post_meta(get_the_ID(),'expert_section_twitter_link',true);
+                                        $instagram_link = get_post_meta(get_the_ID(),'expert_section_instagram_link',true);
+                                        $linkedin_link = get_post_meta(get_the_ID(),'expert_section_linkedin_link',true);
+
+                                ?>
+                                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                                        <div class="single_expert mt_30">
+                                            <!-- <img src="<?php the_post_thumbnail(); ?>" class="img-fluid w-100" alt=""> -->
+                                            <?php the_post_thumbnail( 'expert_man', array( 'class' => 'img-fluid w-100' ) ); ?>
+                                            <div class="expert_details text-center">
+                                                <div class="expert_content">
+                                                    <h4><?php the_title(); ?></h4>
+                                                    <p class="mb_20"><?php the_excerpt();?></p>
+                                                    <ul class="social_icons">
+                                                        <li><a href="<?php echo $facebook_link;?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="<?php echo $twitter_link;?>"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="<?php echo $instagram_link;?>"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="<?php echo $linkedin_link;?>"><i class="fab fa-linkedin-in"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php
+                                endwhile;
+                                }
+                                else {
+                                    ?>
                         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                             <div class="single_expert mt_30">
                                 <img src="<?php echo get_template_directory_uri();?>/img/team_1.jpg" class="img-fluid w-100" alt="">
@@ -355,7 +393,7 @@ global $pegeon_ver;?>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                             <div class="single_expert mt_30">
                                 <img src="<?php echo get_template_directory_uri();?>/img/team_2.jpg" class="img-fluid w-100" alt="">
                                 <div class="expert_details text-center">
@@ -372,7 +410,7 @@ global $pegeon_ver;?>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                             <div class="single_expert mt_30">
                                 <img src="<?php echo get_template_directory_uri();?>/img/team_4.jpg" class="img-fluid w-100" alt="">
                                 <div class="expert_details text-center">
@@ -389,6 +427,9 @@ global $pegeon_ver;?>
                                 </div>
                             </div>
                         </div>
+                        <?php
+                                }
+                                ?>
                     </div>
                 </div>
             </div>
@@ -404,6 +445,7 @@ global $pegeon_ver;?>
                         </div>
                         <div class="col-lg-6" data-aos="fade-right">
                             <div class="accordion" id="accordion">
+
                                 <button class="button" type="button" data-toggle="collapse" aria-expanded="true" data-target="#target_1">
                                 <span class="btn_content">
                                 <span>Experience A Ranking Factor?</span>
@@ -415,6 +457,7 @@ global $pegeon_ver;?>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing e  eiutempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation</p>
                                     </div>
                                 </div>
+                                
                                 <button class="button collapsed mt_30" type="button" data-toggle="collapse" aria-expanded="false" data-target="#target_2">
                                 <span class="btn_content">
                                 <span>Relevance, Authority & Trust</span>
