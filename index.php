@@ -446,7 +446,7 @@ global $pegeon_ver;?>
                         <div class="col-lg-6" data-aos="fade-right">
                             <div class="accordion" id="accordion">
 
-                                <button class="button" type="button" data-toggle="collapse" aria-expanded="true" data-target="#target_1">
+                                <button class="button collapsed mt_30" type="button" data-toggle="collapse" aria-expanded="true" data-target="#target_1">
                                 <span class="btn_content">
                                 <span>Experience A Ranking Factor?</span>
                                 <i class="fas fa-check"></i>

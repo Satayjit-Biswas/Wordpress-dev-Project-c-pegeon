@@ -61,6 +61,35 @@ function expert_section_fields(){
 
 }
 add_action( 'cmb2_admin_init', 'expert_section_fields' );
+// Ask_section
+function service_section_fields(){
+	$service_section_metabox = new_cmb2_box( array(
+		'id'            => 'service_metabox',
+		'title'         => __( 'service section', 'Applad' ),
+		'object_types'  => 'Ask_custom_id',
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true, 
+	) );
+	// $service_section_metabox->add_field( array(
+	// 	'name'       => __( 'service icon name', 'cmb2' ),
+	// 	'desc'       => __( 'input your service icon name ( for example : fab fa-facebook-f , fab fa-twitter etc...)', 'cmb2' ),
+	// 	'id'         => 'service_section_icon_nane',
+	// 	'type'       => 'text',
+	// 	'show_on_cb' => 'cmb2_hide_if_no_cats',
+	// ));
+	$service_section_metabox->add_field( array(
+		'name'             => 'Test Radio',
+		'id'               => 'wiki_test_radio',
+		'type'             => 'radio',
+		'show_option_none' => true,
+		'options'          => array(
+			'standard' => __( 'Option One', 'cmb2' ),
+			'custom'   => __( 'Option Two', 'cmb2' ),
+			'none'     => __( 'Option Three', 'cmb2' ),
+		),
+	) );
+}
 // social_icon
 function social_section_fields(){
 	$social_section_metabox = new_cmb2_box( array(

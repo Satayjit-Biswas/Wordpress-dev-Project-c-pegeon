@@ -463,6 +463,68 @@
                 ),
             )
         ) );
+        // About counter 1 
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'About counter 1', 'pegeon' ),
+            'desc'       => __( 'About Section counter 1, visit: ', 'pegeon' ),
+            'id'         => 'about_section_counter_a',
+            'subsection' => true,
+            'fields'     => array(
+                array(
+                    'id'       => 'about_section_counter_a_text_a_id',
+                    'type'     => 'text',
+                    'title'    => __('Counter Number', 'pegeon' ),
+                    'desc'     => __( 'Type Your Number', 'pegeon' ),
+                    'default'  => '82'
+                ),
+                array(
+                    'id'       => 'about_section_counter_a_text_b_id',
+                    'type'     => 'text',
+                    'title'    => __( 'Counter text', 'pegeon' ),
+                    'desc'     => __( 'Type Your Heading text', 'pegeon' ),
+                    'default'  => 'Project Complete
+                    '
+                ),
+                array(
+                    'id'       => 'about_section_counter_a_text_c_id',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Counter sub text', 'pegeon' ),
+                    'desc'     => __( 'Type Your Heading text', 'pegeon' ),
+                    'default'  => 'Lorem Ipsum is simply dummy text of the printing type setting
+                    '
+                ),
+            )
+        ) );
+        // About counter 2 
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'About counter 2', 'pegeon' ),
+            'desc'       => __( 'About Section counter 2, visit: ', 'pegeon' ),
+            'id'         => 'about_section_counter_b',
+            'subsection' => true,
+            'fields'     => array(
+                array(
+                    'id'       => 'about_section_counter_b_text_a_id',
+                    'type'     => 'text',
+                    'title'    => __('Counter Number', 'pegeon' ),
+                    'desc'     => __( 'Type Your Number', 'pegeon' ),
+                    'default'  => '24'
+                ),
+                array(
+                    'id'       => 'about_section_counter_b_text_b_id',
+                    'type'     => 'text',
+                    'title'    => __( 'Counter text', 'pegeon' ),
+                    'desc'     => __( 'Type Your Heading text', 'pegeon' ),
+                    'default'  => 'Great Results'
+                ),
+                array(
+                    'id'       => 'about_section_counter_b_text_c_id',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Counter sub text', 'pegeon' ),
+                    'desc'     => __( 'Type Your Heading text', 'pegeon' ),
+                    'default'  => 'Lorem Ipsum is simply dummy text of the printing type setting'
+                ),
+            )
+        ) );
     // -> Banner section
     Redux::setSection( $opt_name, array(
         'title' => __( 'Banner Section', 'pegeon' ),

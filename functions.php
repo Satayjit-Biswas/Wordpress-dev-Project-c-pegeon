@@ -82,7 +82,23 @@
 
         ));
     }
-    add_action('init','expert_custom');
+    // Ask section setup
+    function ask_custom(){
+        register_post_type('Ask_custom_id',array(
+            'labels' => array(
+                'menu_name' => 'Ask Man Section',
+                'name'      => 'Ask Man',
+                'add_new'   => 'Add New Ask',
+                'all_items' => 'All Ask',
+                'add_new_item'=>'Add New Ask',
+                ),
+            'public'        => true,
+            'supports'       => array('title','editor'),
+            'menu_icon'     =>'dashicons-hammer',
+
+        ));
+    }
+    add_action('init','ask_custom');
     // social icon section
     function social_icon(){
         register_post_type('social_icon_id',array(
