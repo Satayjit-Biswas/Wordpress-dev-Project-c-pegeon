@@ -448,6 +448,23 @@ global $pegeon_ver;?>
 
                                 <button class="button collapsed mt_30" type="button" data-toggle="collapse" aria-expanded="true" data-target="#target_1">
                                 <span class="btn_content">
+                                <span><?php the_title(); ?></span>
+                                <i class="fas fa-check"></i>
+                                </span>
+                                </button>
+                                <div id="target_1" class="collapse show" data-parent="#accordion">
+                                    <div class="ask_content">
+                                        <p><?php echo $collapse; ?>t</p>
+                                    </div>
+                                </div>
+                                <?php
+                                endwhile;
+                                }
+                                else{
+
+                                ?>
+                                <button class="button collapsed mt_30" type="button" data-toggle="collapse" aria-expanded="true" data-target="#target_1">
+                                <span class="btn_content">
                                 <span>Experience A Ranking Factor?</span>
                                 <i class="fas fa-check"></i>
                                 </span>
