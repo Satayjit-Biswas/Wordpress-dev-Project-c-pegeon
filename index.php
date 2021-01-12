@@ -445,24 +445,38 @@ global $pegeon_ver;?>
                         </div>
                         <div class="col-lg-6" data-aos="fade-right">
                             <div class="accordion" id="accordion">
-
-                                <button class="button collapsed mt_30" type="button" data-toggle="collapse" aria-expanded="true" data-target="#target_1">
+                            <?php
+                                $ask_section_post = new WP_Query(array(
+                                    'post_type'      => 'ask_custom_id',
+                                    'posts_per_page' => -1,
+                                    'order'          => 'ASC'
+                                ));
+                                if($ask_section_post -> have_posts()){
+                                    while($ask_section_post -> have_posts()) : $ask_section_post-> the_post();
+                                        $collapse_id = get_post_meta(get_the_ID(),'collapse_id',true);
+                                ?>
+                                 <button class="button collapsed mt_30" type="button" data-toggle="collapse" aria-expanded="<?php echo $collapse_id; ?>" data-target="#<?php echo $slug = get_post_field('post_name',get_post());?>">
                                 <span class="btn_content">
-                                <span><?php the_title(); ?></span>
+                                <span><?php echo the_title(); ?></span>
                                 <i class="fas fa-check"></i>
                                 </span>
                                 </button>
-                                <div id="target_1" class="collapse show" data-parent="#accordion">
+                                <div id="<?php echo $slug = get_post_field('post_name',get_post());?>" class="collapse 
+                                <?php 
+                                    if($collapse_id == 'true'){
+                                        echo "show";
+                                    } 
+                                ?>" data-parent="#accordion">
                                     <div class="ask_content">
-                                        <p><?php echo $collapse; ?>t</p>
+                                        <p><?php the_excerpt();?></p>
                                     </div>
                                 </div>
                                 <?php
                                 endwhile;
                                 }
-                                else{
-
-                                ?>
+                                else {
+                                    ?>
+                               
                                 <button class="button collapsed mt_30" type="button" data-toggle="collapse" aria-expanded="true" data-target="#target_1">
                                 <span class="btn_content">
                                 <span>Experience A Ranking Factor?</span>
@@ -508,6 +522,9 @@ global $pegeon_ver;?>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing e  eiutempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation</p>
                                     </div>
                                 </div>
+                                <?php
+                                }
+                                ?>
                             </div>
                         </div>
                         <div class="col-lg-6 text-center mt_md_30" data-aos="fade-left">
@@ -541,6 +558,50 @@ global $pegeon_ver;?>
                                 <div class="tab-content">
                                     <div class="tab-pane fade active show" id="monthly">
                                         <div class="row justify-content-center">
+                                            <?php
+                                            $monthly_section_post = new WP_Query(array(
+                                                'post_type'    =>'monthly_price_id',
+                                                'posts_per_page'=>'-1',
+                                                'order'        =>'ASC'
+                                            ));
+                                            if($monthly_section_post -> have_posts()){
+                                                while($monthly_section_post ->have_posts()) : $monthly_section_post -> the_post();
+                                                    $monthly_price = get_post_meta(get_the_ID(),'monthly_price_section_price',true);
+                                                    $monthly_features = get_post_meta(get_the_ID(),'monthly_price_features',true);
+                                                    $monthly_button_text = get_post_meta(get_the_ID(),'monthly_price_section_select_text',true);
+                                                    $monthly_button_url = get_post_meta(get_the_ID(),'monthly_price_section_button_url',true);
+                                        
+                                            ?>
+
+                                            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                                                <div class="card p-2 p-lg-3 rounded-lg mt_30">
+                                                    <div class="card-body">
+                                                        <h4><?php echo the_title();?></h4>
+                                                        <p class="text-muted"><?php echo the_excerpt();?></p>
+                                                        <h2 class="blue_text" style="text-transform: uppercase;"><?php echo $monthly_price;?></h2>
+                                                        <ul class="border-top pt-4">
+                                                            <li class="text-uppercase mb-3">FEATURES</li>
+                                                                    <?php
+                                                                        foreach ($monthly_features as $monthly_value) {
+                                                                        ?>
+                                                                        <li class="icon-list-item mt-2">
+                                                                            <span class="icon rounded-circle"><i class="fal fa-check"></i></span>
+                                                                            <?php
+                                                                            echo "$monthly_value";
+                                                                            ?>
+                                                                        </li>
+                                                                        <?php
+                                                                        }?>
+                                                        </ul>
+                                                        <a class="button blue_bg w-100 mt-4" href="<?php echo $monthly_button_url;?>"><?php echo $monthly_button_text;?></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php
+                                                endwhile;
+                                            }
+                                            else{
+                                            ?>
                                             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                                                 <div class="card p-2 p-lg-3 rounded-lg mt_30">
                                                     <div class="card-body">
@@ -630,11 +691,57 @@ global $pegeon_ver;?>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <?php
+                                            }
+                                            ?>
                                             <!-- end of pricing item -->
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="annually">
                                         <div class="row justify-content-center">
+                                        <?php
+                                            $yearly_section_post = new WP_Query(array(
+                                                'post_type'    =>'yearly_price_id',
+                                                'posts_per_page'=>'-1',
+                                                'order'        =>'ASC'
+                                            ));
+                                            if($yearly_section_post -> have_posts()){
+                                                while($yearly_section_post ->have_posts()) : $yearly_section_post -> the_post();
+                                                    $yearly_price = get_post_meta(get_the_ID(),'yearly_price_section_price',true);
+                                                    $yearly_features = get_post_meta(get_the_ID(),'yearly_price_features',true);
+                                                    $yearly_button_text = get_post_meta(get_the_ID(),'yearly_price_section_select_text',true);
+                                                    $yearly_button_url = get_post_meta(get_the_ID(),'yearly_price_section_button_url',true);
+                                        
+                                            ?>
+                                            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                                                <div class="card p-2 p-lg-3 rounded-lg mt_30">
+                                                    <div class="card-body">
+                                                        <h4><?php echo the_title();?></h4>
+                                                        <p class="text-muted"><?php echo the_excerpt();?></p>
+                                                        <h2 class="blue_text" style="text-transform: uppercase;"><?php echo $yearly_price;?></h2>
+                                                        <ul class="border-top pt-4">
+                                                            <li class="text-uppercase mb-3">FEATURES</li>
+                                                                    <?php
+                                                                        foreach ($yearly_features as $yearly_value) {
+                                                                        ?>
+                                                                        <li class="icon-list-item mt-2">
+                                                                            <span class="icon rounded-circle"><i class="fal fa-check"></i></span>
+                                                                            <?php
+                                                                            echo "$yearly_value";
+                                                                            ?>
+                                                                        </li>
+                                                                        <?php
+                                                                        }?>
+                                                        </ul>
+                                                        <a class="button blue_bg w-100 mt-4" href="<?php echo $yearly_button_url;?>"><?php echo $yearly_button_text;?></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php
+                                                endwhile;
+                                            }
+                                            else{
+                                            ?>
                                             <div class="col-md-6 col-lg-4">
                                                 <div class="card p-2 p-lg-3 rounded-lg mt_30">
                                                     <div class="card-body">
@@ -725,6 +832,9 @@ global $pegeon_ver;?>
                                                 </div>
                                             </div>
                                             <!-- end of pricing item -->
+                                            <?php
+                                            }
+                                            ?>
                                         </div>
                                     </div>
                                 </div>

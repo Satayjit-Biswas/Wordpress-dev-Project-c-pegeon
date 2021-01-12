@@ -61,40 +61,117 @@ function expert_section_fields(){
 
 }
 add_action( 'cmb2_admin_init', 'expert_section_fields' );
-// Ask_section
-function service_section_fields(){
-	$service_section_metabox = new_cmb2_box( array(
-		'id'            => 'service_metabox',
-		'title'         => __( 'service section', 'Applad' ),
-		'object_types'  => 'Ask_custom_id',
+// // Ask_section
+function ask_section_fields(){
+	$ask_section_metabox = new_cmb2_box( array(
+		'id'            => 'ask_metabox',
+		'title'         => __( 'Ack', 'pegeon' ),
+		'object_types'  => 'ask_custom_id',
 		'context'       => 'normal',
 		'priority'      => 'high',
 		'show_names'    => true, 
 	) );
-	// $service_section_metabox->add_field( array(
-	// 	'name'       => __( 'service icon name', 'cmb2' ),
-	// 	'desc'       => __( 'input your service icon name ( for example : fab fa-facebook-f , fab fa-twitter etc...)', 'cmb2' ),
-	// 	'id'         => 'service_section_icon_nane',
-	// 	'type'       => 'text',
-	// 	'show_on_cb' => 'cmb2_hide_if_no_cats',
-	// ));
-	$service_section_metabox->add_field( array(
-		'name'             => 'Test Radio',
-		'id'               => 'wiki_test_radio',
-		'type'             => 'radio',
-		'show_option_none' => true,
-		'options'          => array(
-			'standard' => __( 'Option One', 'cmb2' ),
-			'custom'   => __( 'Option Two', 'cmb2' ),
-			'none'     => __( 'Option Three', 'cmb2' ),
+	$ask_section_metabox->add_field( array(
+		'name'    => 'Collapse',
+		'id'      => 'collapse_id',
+		'type'    => 'radio_inline',
+		'options' => array(
+			'true' => __( 'Show', 'cmb2' ),
+			'false'   => __( 'Hidden', 'cmb2' ),
 		),
+		'default' => 'true',
 	) );
 }
+add_action('cmb2_admin_init', 'ask_section_fields' );
+// price_icon
+function monthly_price_section_fields(){
+	$monthly_price_section_metabox = new_cmb2_box( array(
+		'id'            => 'monthly_price_metabox',
+		'title'         => __( 'price section', 'pegeon' ),
+		'object_types'  => 'monthly_price_id',
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true, 
+	) );
+	$monthly_price_section_metabox->add_field( array(
+		'name'       => __( 'Price', 'cmb2' ),
+		'desc'       => __( 'Price $', 'cmb2' ),
+		'id'         => 'monthly_price_section_price',
+		'type'       => 'text',
+		'show_on_cb' => 'cmb2_hide_if_no_cats',
+	));
+	$monthly_price_section_metabox->add_field( array(
+		'name'       => __( 'Features', 'cmb2'),
+		'desc'       => __( 'input your price link', 'cmb2' ),
+		'id'         => 'monthly_price_features',
+		'type'       => 'text',
+		'repeatable' => true,
+		'show_on_cb' => 'cmb2_hide_if_no_cats',
+	));
+	$monthly_price_section_metabox->add_field( array(
+		'name'       => __( 'Select text', 'cmb2' ),
+		'desc'       => __( 'Butten Text', 'cmb2' ),
+		'id'         => 'monthly_price_section_select_text',
+		'type'       => 'text',
+		'show_on_cb' => 'cmb2_hide_if_no_cats',
+	));
+	$monthly_price_section_metabox->add_field( array(
+		'name'       => __( 'Button Url', 'cmb2' ),
+		'desc'       => __( 'Button Url', 'cmb2' ),
+		'id'         => 'monthly_price_section_button_url',
+		'type'       => 'text',
+		'show_on_cb' => 'cmb2_hide_if_no_cats',
+	));
+
+}
+add_action( 'cmb2_admin_init', 'monthly_price_section_fields' );
+function yearly_price_section_fields(){
+	$yearly_price_section_metabox = new_cmb2_box( array(
+		'id'            => 'yearly_price_metabox',
+		'title'         => __( 'price section', 'pegeon' ),
+		'object_types'  => 'yearly_price_id',
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true, 
+	) );
+	$yearly_price_section_metabox->add_field( array(
+		'name'       => __( 'Price', 'cmb2' ),
+		'desc'       => __( 'Price $', 'cmb2' ),
+		'id'         => 'yearly_price_section_price',
+		'type'       => 'text',
+		'show_on_cb' => 'cmb2_hide_if_no_cats',
+	));
+	$yearly_price_section_metabox->add_field( array(
+		'name'       => __( 'Features', 'cmb2'),
+		'desc'       => __( 'input your price link', 'cmb2' ),
+		'id'         => 'yearly_price_features',
+		'type'       => 'text',
+		'repeatable' => true,
+		'show_on_cb' => 'cmb2_hide_if_no_cats',
+	));
+	$yearly_price_section_metabox->add_field( array(
+		'name'       => __( 'Select text', 'cmb2' ),
+		'desc'       => __( 'Butten Text', 'cmb2' ),
+		'id'         => 'yearly_price_section_select_text',
+		'type'       => 'text',
+		'show_on_cb' => 'cmb2_hide_if_no_cats',
+	));
+	$yearly_price_section_metabox->add_field( array(
+		'name'       => __( 'Button Url', 'cmb2' ),
+		'desc'       => __( 'Button Url', 'cmb2' ),
+		'id'         => 'yearly_price_section_button_url',
+		'type'       => 'text',
+		'show_on_cb' => 'cmb2_hide_if_no_cats',
+	));
+
+}
+add_action( 'cmb2_admin_init', 'yearly_price_section_fields' );
+
 // social_icon
 function social_section_fields(){
 	$social_section_metabox = new_cmb2_box( array(
 		'id'            => 'social_metabox',
-		'title'         => __( 'social section', 'Applad' ),
+		'title'         => __( 'social section', 'pegeon' ),
 		'object_types'  => 'social_icon_id',
 		'context'       => 'normal',
 		'priority'      => 'high',

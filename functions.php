@@ -82,12 +82,13 @@
 
         ));
     }
+    add_action('init','expert_custom');
     // Ask section setup
     function ask_custom(){
-        register_post_type('Ask_custom_id',array(
+        register_post_type('ask_custom_id',array(
             'labels' => array(
-                'menu_name' => 'Ask Man Section',
-                'name'      => 'Ask Man',
+                'menu_name' => 'Ask Section',
+                'name'      => 'Ask',
                 'add_new'   => 'Add New Ask',
                 'all_items' => 'All Ask',
                 'add_new_item'=>'Add New Ask',
@@ -99,6 +100,39 @@
         ));
     }
     add_action('init','ask_custom');
+    // price section setup
+    function monthly_price_custom(){
+        register_post_type('monthly_price_id',array(
+            'labels' => array(
+                'menu_name' => 'monthly price Section',
+                'name'      => 'Price Section',
+                'add_new'   => 'Add New Package',
+                'all_items' => 'All Package',
+                'add_new_item'=>'Add New Package',
+                ),
+            'public'        => true,
+            'supports'       => array('title','editor'),
+            'menu_icon'     =>'dashicons-hammer',
+
+        ));
+    }
+    add_action('init','monthly_price_custom');
+    function yearly_price_custom(){
+        register_post_type('yearly_price_id',array(
+            'labels' => array(
+                'menu_name' => 'yearly price Section',
+                'name'      => 'Price Section',
+                'add_new'   => 'Add New Package',
+                'all_items' => 'All Package',
+                'add_new_item'=>'Add New Package',
+                ),
+            'public'        => true,
+            'supports'       => array('title','editor'),
+            'menu_icon'     =>'dashicons-hammer',
+
+        ));
+    }
+    add_action('init','yearly_price_custom');
     // social icon section
     function social_icon(){
         register_post_type('social_icon_id',array(
@@ -106,7 +140,7 @@
                 'menu_name' => 'Social icon',
                 'name'      => 'Social icon',
                 'add_new'   => 'Add New Social',
-                'all_items' => 'All Posts',
+                'all_items' => 'All Icon',
                 'add_new_item'=>'Add New Social',
                 ),
             'public'        => true,
