@@ -855,6 +855,40 @@ global $pegeon_ver;?>
                         </div>
                         <div class="col-md-12">
                             <div class="owl-carousel testi_carousel">
+                                <?php 
+                                    $feedback_post = new WP_Query(array(
+                                        'post_type' => 'feedback_custom_id',
+                                        'posts_per_page'   => -1,
+                                        'order'     => 'ASC'
+                                    ));
+                                    if($feedback_post -> have_posts()){
+                                        while($feedback_post -> have_posts()) : $feedback_post -> the_post();
+                                        $profession_name = get_post_meta(get_the_ID(),'feedback_section_work',true);
+
+                                        ?>
+                                        <div class="item">
+                                    <div class="single_client">
+                                        <i class="fas fa-quote-left"></i>
+                                        <p class="client_feedback mb_25 mt_25"><?php the_title();?>
+                                        </p>
+                                        <div class="media align-items-center">
+                                            <div class="client_img">
+                                                <!-- <img src="<?php echo get_template_directory_uri();?>/img/avatar-2.svg" alt=""> -->
+                                                <?php the_post_thumbnail( 'feedback_img');?>
+                                                
+                                            </div>
+                                            <div class="media-body">
+                                                <h4>Molly Robinson</h4>
+                                                <p><?php echo $profession_name ;?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php
+                                    endwhile;
+                                    }
+                                else{
+                                    ?>
                                 <div class="item">
                                     <div class="single_client">
                                         <i class="fas fa-quote-left"></i>
@@ -903,6 +937,9 @@ global $pegeon_ver;?>
                                         </div>
                                     </div>
                                 </div>
+                                <?php
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>

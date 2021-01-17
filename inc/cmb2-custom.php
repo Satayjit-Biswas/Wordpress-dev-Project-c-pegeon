@@ -166,7 +166,25 @@ function yearly_price_section_fields(){
 
 }
 add_action( 'cmb2_admin_init', 'yearly_price_section_fields' );
-
+// feedback_section
+function feedback_section_fields(){
+	$feedback_section_metabox = new_cmb2_box( array(
+		'id'            => 'feedback_metabox',
+		'title'         => __( 'feedback section', 'Applad' ),
+		'object_types'  => 'feedback_custom_id',
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true, 
+	) );
+	$feedback_section_metabox->add_field( array(
+		'name'       => __( 'Customers Profession', 'cmb2' ),
+		'desc'       => __( 'Profession', 'cmb2' ),
+		'id'         => 'feedback_section_work',
+		'type'       => 'text',
+		'show_on_cb' => 'cmb2_hide_if_no_cats',
+	));
+}
+add_action( 'cmb2_admin_init', 'feedback_section_fields' );
 // social_icon
 function social_section_fields(){
 	$social_section_metabox = new_cmb2_box( array(

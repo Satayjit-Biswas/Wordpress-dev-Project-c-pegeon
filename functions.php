@@ -5,6 +5,7 @@
         add_theme_support('menu');
         add_theme_support('post-thumbnails');
         add_image_size( 'expert_man', 370, 450 );
+        add_image_size( 'feedback_img', 64, 64 );
     }
     add_action('after_setup_theme','theme_support');
     // css link
@@ -133,6 +134,23 @@
         ));
     }
     add_action('init','yearly_price_custom');
+    // feedback section setup
+    function feedback_custom(){
+        register_post_type('feedback_custom_id',array(
+            'labels' => array(
+                'menu_name' => 'feedback Section',
+                'name'      => 'feedback',
+                'add_new'   => 'Add New feedback',
+                'all_items' => 'All feedback',
+                'add_new_item'=>'Add New feedback',
+                ),
+            'public'        => true,
+            'supports'       => array('title','editor','thumbnail'),
+            'menu_icon'     =>'dashicons-hammer',
+
+        ));
+    }
+    add_action('init','feedback_custom');
     // social icon section
     function social_icon(){
         register_post_type('social_icon_id',array(
