@@ -882,7 +882,61 @@
             )
         ) );
     
-
+    // -> Contact section
+    Redux::setSection( $opt_name, array(
+        'title' => __( 'Contact Section', 'pegeon' ),
+        'id'    => 'contact_section',
+        'desc'  => __( 'footer Section Option.', 'pegeon' ),
+        'icon'  => 'el  el-map-marker'
+        ) );
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Phone Number', 'pegeon' ),
+            'desc'       => __( 'Phone Number, visit: ', 'pegeon' ),
+            'id'         => 'contact_section_phone_text',
+            'subsection' => true,
+            'fields'     => array(
+                array(
+                    'id'       => 'contact_section_phone',
+                    'type'     => 'text',
+                    'title'    => __( 'Number', 'pegeon' ),
+                    'desc'     => __( 'Phone Number', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => '900 888 707 123'
+                ),
+            )
+        ) );
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Email', 'pegeon' ),
+            'desc'       => __( 'Email, visit: ', 'pegeon' ),
+            'id'         => 'contact_section_email_text',
+            'subsection' => true,
+            'fields'     => array(
+                array(
+                    'id'       => 'contact_section_email',
+                    'type'     => 'text',
+                    'title'    => __( 'Email', 'pegeon' ),
+                    'desc'     => __( 'Email', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => 'name@gmail.com'
+                ),
+            )
+        ) );
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Address', 'pegeon' ),
+            'desc'       => __( 'Address, visit: ', 'pegeon' ),
+            'id'         => 'contact_section_address_text',
+            'subsection' => true,
+            'fields'     => array(
+                array(
+                    'id'       => 'contact_section_address',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Address', 'pegeon' ),
+                    'desc'     => __( 'Address', 'pegeon' ),
+                    'url'      => true,
+                    'default'  => 'Pasar kambing 58 Suite X.110 Peterongan Semarang, USA'
+                ),
+            )
+        ) );
     // -> Footer section
     Redux::setSection( $opt_name, array(
         'title' => __( 'Footer Section', 'pegeon' ),

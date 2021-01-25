@@ -250,21 +250,68 @@ global $pegeon_ver;?>
                             <div class="project_filter_menu mt_40">
                                 <ul>
                                     <li data-filter="*" class="active">View All</li>
+
+                                    <?php
+                                        $project_catagori = get_terms('project-cat');
+                                        if(!empty($project_catagori)) : foreach($project_catagori as $catagpri):?>
+                                        <li data-filter=".<?php echo esc_attr($catagpri->slug);?>"><?php echo esc_html($catagpri ->name);?></li>
+                                    <?php
+                                        endforeach;
+                                        else:
+                                    ?>
                                     <li data-filter=".marketing">Marketing</li>
                                     <li data-filter=".consulting">Consulting</li>
                                     <li data-filter=".branding">Branding</li>
                                     <li data-filter=".finance">Finance</li>
+                                    <?php
+                                        endif;
+                                    ?>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="row project_items">
+                        <?php
+                            $project_post = new WP_Query(array(
+                                'post_type'      => 'project_custom_id',
+                                'posts_per_page' => -1,
+                                'order'          => 'ASC'
+                            ));
+                            if ($project_post -> have_posts()) {
+                                    while($project_post -> have_posts()) : $project_post -> the_post();
+                                ?>
+                                <div class="col-sm-6 col-lg-4 item <?php 
+                                    $project_cat_id_var = get_the_terms(get_the_ID(),'project-cat');
+                                    if(!empty($project_cat_id_var)) : foreach($project_cat_id_var as $project_cat_id) :
+                                             echo $project_cat_id->slug.' ';
+                                    endforeach;
+                                    endif;
+                                    ?>
+                                    ?> mt_30">
+                                    <div class="snake position-relative overflow-hidden">
+                                        <!-- <img src="<?php echo get_template_directory_uri();?>" class="img-fluid" alt=""> -->
+                                        <?php the_post_thumbnail('project_img',array('class' =>'img-fluid'));?>
+                                        <div class="overlay">
+                                            <h3 class="mb_15"><?php the_title();?></h3>
+                                            <a href="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'full' ); ?>">
+                                        
+                                            <i class="fas fa-long-arrow-alt-right mt_20"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <?php
+                                endwhile;
+                                }
+                                else {
+                                    ?>
                         <div class="col-sm-6 col-lg-4 item consulting mt_30">
                             <div class="snake position-relative overflow-hidden">
                                 <img src="<?php echo get_template_directory_uri();?>/img/project_1.jpg" class="img-fluid" alt="">
                                 <div class="overlay">
                                     <h3 class="mb_15">Digital Consulting</h3>
-                                    <a href="img/project_1.jpg">
+                                    <a href="<?php echo get_template_directory_uri();?>/img/project_1.jpg">
                                     <i class="fas fa-long-arrow-alt-right mt_20"></i>
                                     </a>
                                 </div>
@@ -275,7 +322,7 @@ global $pegeon_ver;?>
                                 <img src="<?php echo get_template_directory_uri();?>/img/project_2.jpg" class="img-fluid" alt="">
                                 <div class="overlay">
                                     <h3 class="mb_15">Digital Marketing</h3>
-                                    <a href="img/project_2.jpg">
+                                    <a href="<?php echo get_template_directory_uri();?>/img/project_2.jpg">
                                     <i class="fas fa-long-arrow-alt-right mt_20"></i>
                                     </a>
                                 </div>
@@ -286,7 +333,7 @@ global $pegeon_ver;?>
                                 <img src="<?php echo get_template_directory_uri();?>/img/project_3.jpg" class="img-fluid" alt="">
                                 <div class="overlay">
                                     <h3 class="mb_15">Branding</h3>
-                                    <a href="img/project_3.jpg">
+                                    <a href="<?php echo get_template_directory_uri();?>/img/project_3.jpg">
                                     <i class="fas fa-long-arrow-alt-right mt_20"></i>
                                     </a>
                                 </div>
@@ -297,7 +344,7 @@ global $pegeon_ver;?>
                                 <img src="<?php echo get_template_directory_uri();?>/img/project_4.jpg" class="img-fluid" alt="">
                                 <div class="overlay">
                                     <h3 class="mb_15">Digital Consulting</h3>
-                                    <a href="img/project_4.jpg">
+                                    <a href="<?php echo get_template_directory_uri();?>/img/project_4.jpg">
                                     <i class="fas fa-long-arrow-alt-right mt_20"></i>
                                     </a>
                                 </div>
@@ -308,7 +355,7 @@ global $pegeon_ver;?>
                                 <img src="<?php echo get_template_directory_uri();?>/img/project_5.jpg" class="img-fluid" alt="">
                                 <div class="overlay">
                                     <h3 class="mb_15">Finance</h3>
-                                    <a href="img/project_2.jpg">
+                                    <a href="<?php echo get_template_directory_uri();?>/img/project_2.jpg">
                                     <i class="fas fa-long-arrow-alt-right mt_20"></i>
                                     </a>
                                 </div>
@@ -319,12 +366,15 @@ global $pegeon_ver;?>
                                 <img src="<?php echo get_template_directory_uri();?>/img/project_6.jpg" class="img-fluid" alt="">
                                 <div class="overlay">
                                     <h3 class="mb_15">Branding</h3>
-                                    <a href="img/project_6.jpg">
+                                    <a href="<?php echo get_template_directory_uri();?>/img/project_6.jpg">
                                     <i class="fas fa-long-arrow-alt-right mt_20"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -955,6 +1005,21 @@ global $pegeon_ver;?>
                             <h2 class="title_1"><?php echo $pegeon_ver['news_text_section_text_a_id'];?></h2>
                             <p class="title_2"><?php echo $pegeon_ver['news_text_section_text_b_id'];?></p>
                         </div>
+                        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="single_news mt_30">
+                                <div class="overflow-hidden">
+                                    <?php the_post_thumbnail('post_img');?>
+                                </div>
+                                <h4 class="mt_25 mb_15"><?php the_title();?></h4>
+                                <?php echo wp_trim_words(get_the_content(),20,NULL);?>
+                                <a href="<?php the_permalink();?>" class="mt_25 button blue_bg">Read More</a>
+                            </div>
+                        </div>
+                        <?php
+                            endwhile;
+                        else:
+                        ?>
                         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                             <div class="single_news mt_30">
                                 <div class="overflow-hidden">
@@ -965,6 +1030,7 @@ global $pegeon_ver;?>
                                 <a href="#" class="mt_25 button blue_bg">Read More</a>
                             </div>
                         </div>
+
                         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                             <div class="single_news mt_30">
                                 <div class="overflow-hidden">
@@ -985,6 +1051,20 @@ global $pegeon_ver;?>
                                 <a href="#" class="mt_25 button blue_bg">Read More</a>
                             </div>
                         </div>
+                        <?php
+                            endif;
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div row="row">
+                    <div class="col-12 text-center">
+                    <?php $args = array(
+                        
+                    ); ?>
+
+                    <?php echo paginate_links( $args ); ?>
                     </div>
                 </div>
             </div>
@@ -1005,22 +1085,22 @@ global $pegeon_ver;?>
                                     <ul>
                                         <li>
                                             <strong>Phone : </strong>
-                                            <a href="tel:900888707123">+900 888 707 123</a>
+                                            <a href="tel:<?php echo $pegeon_ver['contact_section_phone'];?>">+<?php echo $pegeon_ver['contact_section_phone'];?></a>
                                         </li>
                                         <li>
                                             <strong>Email : </strong>
-                                            <a href="mailto:name@yoursite.com">name@yoursite.com</a>
+                                            <a href="<?php echo $pegeon_ver['contact_section_email'];?>"><?php echo $pegeon_ver['contact_section_email'];?></a>
                                         </li>
                                         <li>
-                                            <strong>Adress : </strong>
-                                            <p>Pasar kambing 58 Suite X.110 Peterongan Semarang, USA</p>
+                                            <strong>Address : </strong>
+                                            <p><?php echo $pegeon_ver['contact_section_address'];?></p>
                                         </li>
                                     </ul>
                                 </div>
                             </aside>
                         </div>
                         <div class="col-lg-7 col-xl-8 mt_30 text-center" data-aos="fade-left">
-                            <form action="#" method="post">
+                            <!-- <form action="#" method="post">
                                 <div class="row">
                                     <div class="col-md-6 form-group">
                                         <input type="text" name="name" class="inputBox" placeholder="Your Name">
@@ -1038,7 +1118,8 @@ global $pegeon_ver;?>
                                         <button class="button blue_bg" type="submit">Send message</button>
                                     </div>
                                 </div>
-                            </form>
+                            </form> -->
+                            <?php echo do_shortcode('[contact-form-7 id="158" title="form"]');?>
                         </div>
                     </div>
                 </div>

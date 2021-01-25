@@ -6,6 +6,10 @@
         add_theme_support('post-thumbnails');
         add_image_size( 'expert_man', 370, 450 );
         add_image_size( 'feedback_img', 64, 64 );
+        add_image_size( 'post_img', 380, 228,true);
+        add_image_size( 'project_img', 370, 370,true);
+
+        
     }
     add_action('after_setup_theme','theme_support');
     // css link
@@ -66,7 +70,39 @@
 
         ));
     }
-    add_action('init','service_custom');
+    // Project section setup
+    function project_custom(){
+        register_post_type('project_custom_id',array(
+            'labels' => array(
+                'menu_name' => 'project Section',
+                'name'      => 'project Section',
+                'add_new'   => 'Add New Project',
+                'all_items' => 'All Posts',
+                'add_new_item'=>'Add New project',
+                'item_published'      => __('Portfolio published'),
+
+                ),
+            'public'        => true,
+            'supports'       => array('title','thumbnail'),
+            'menu_icon'     =>'dashicons-hammer',
+
+        ));
+        register_taxonomy(
+            'project-cat',
+            'project_custom_id',
+                array(
+                    'hierarchical' => true,
+                    'label'        => 'Category',
+                    'query_ver'    => true,
+                    'show_admin_column'=>true,
+                    'rewrite'          => array(
+                        'slug'         => 'faqs-category',
+                        'with_front'   =>true,
+                    )
+                ),
+        );
+    }
+    add_action('init','project_custom', 0 );
     // Expert section setup
     function expert_custom(){
         register_post_type('expert_custom_id',array(
